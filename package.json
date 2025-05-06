@@ -1,0 +1,21 @@
+{
+  "name": "mycontacts",
+  "version": "1.0.0",
+  "description": "API to store contacts",
+  "main": "index.js",
+  "author": "Fauzer Junior",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2",
+    "pg": "^8.15.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.23.0",
+    "eslint": "^9.23.0",
+    "globals": "^16.0.0",
+    "nodemon": "^3.1.9"
+  },
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  }
+}
