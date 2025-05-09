@@ -14,6 +14,7 @@ export default defineConfig([
       semi: ['error', 'always'],
       quotes: ['error', 'single'],
       'class-methods-use-this': 'off',
+      'no-unused-vars': ['error', { argsIgnorePatterns: 'next' }],
     },
   },
 ]);
