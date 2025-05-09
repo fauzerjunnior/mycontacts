@@ -16,6 +16,9 @@ export default [
         },
       },
     },
+    env: {
+      browser: true,
+    },
     plugins: {
       react,
       prettier: prettierPlugin,
