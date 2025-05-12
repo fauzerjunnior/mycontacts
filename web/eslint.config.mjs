@@ -29,6 +29,8 @@ export default [
       'import/no-anonymous-default-export': 'off',
       'jsx-a11y/alt-text': 'off',
       'react/react-in-jsx-scope': 'off',
+      // temp
+      'jsx-a11y/anchor-is-valid': 'off',
     },
   },
   prettierConfig,

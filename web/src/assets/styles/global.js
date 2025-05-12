@@ -10,6 +10,7 @@ export default createGlobalStyle`
 
   body {
     background: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.gray[222]};
     font-size: 16px;
   }
 

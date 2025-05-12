@@ -1,4 +1,8 @@
-import { Container, Header } from './styles';
+import { Card, Container, Header, ListContainer } from './styles';
+
+import arrow from '../../assets/images/icons/arrow.svg';
+import trash from '../../assets/images/icons/trash.svg';
+import edit from '../../assets/images/icons/edit.svg';
 
 export default function ContactsList() {
   return (
@@ -10,6 +14,81 @@ export default function ContactsList() {
           Novo contato
         </a>
       </Header>
+
+      <ListContainer>
+        <header>
+          <button type="button">
+            <span>Nome</span>
+            <img src={arrow} alt="Arrow" />
+          </button>
+        </header>
+      </ListContainer>
+
+      <Card>
+        <div className="info">
+          <div className="contact-name">
+            <strong>Fauzer Junior</strong>
+            <small>Instagram</small>
+          </div>
+
+          <span>fauzer@gmail.com</span>
+          <span>(19) 98904-6079</span>
+        </div>
+
+        <div className="actions">
+          <a href="#">
+            <img src={edit} alt="Edit" />
+          </a>
+
+          <button type="button">
+            <img src={trash} alt="Trash" />
+          </button>
+        </div>
+      </Card>
+
+      <Card>
+        <div className="info">
+          <div className="contact-name">
+            <strong>Fauzer Junior</strong>
+            <small>Instagram</small>
+          </div>
+
+          <span>fauzer@gmail.com</span>
+          <span>(19) 98904-6079</span>
+        </div>
+
+        <div className="actions">
+          <a href="#">
+            <img src={edit} alt="Edit" />
+          </a>
+
+          <button type="button">
+            <img src={trash} alt="Trash" />
+          </button>
+        </div>
+      </Card>
+
+      <Card>
+        <div className="info">
+          <div className="contact-name">
+            <strong>Fauzer Junior</strong>
+            <small>Instagram</small>
+          </div>
+
+          <span>fauzer@gmail.com</span>
+          <span>(19) 98904-6079</span>
+        </div>
+
+        <div className="actions">
+          <a href="#">
+            <img src={edit} alt="Edit" />
+          </a>
+
+          <button type="button">
+            <img src={trash} alt="Trash" />
+          </button>
+        </div>
+      </Card>
     </Container>
   );
 }
