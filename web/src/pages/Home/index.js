@@ -6,6 +6,8 @@ import {
   InputSearchContainer,
 } from './styles';
 
+import { Link } from 'react-router-dom';
+
 import arrow from '../../assets/images/icons/arrow.svg';
 import trash from '../../assets/images/icons/trash.svg';
 import edit from '../../assets/images/icons/edit.svg';
@@ -20,9 +22,7 @@ export default function Home() {
       <Header>
         <strong>3 contatos</strong>
 
-        <a href="#" title="Novo contato">
-          Novo contato
-        </a>
+        <Link to="/new">Novo contato</Link>
       </Header>
 
       <ListContainer>
@@ -46,9 +46,9 @@ export default function Home() {
         </div>
 
         <div className="actions">
-          <a href="#">
+          <Link to="/edit/12">
             <img src={edit} alt="Edit" />
-          </a>
+          </Link>
 
           <button type="button">
             <img src={trash} alt="Trash" />
@@ -68,9 +68,9 @@ export default function Home() {
         </div>
 
         <div className="actions">
-          <a href="#">
+          <Link to="/edit/12">
             <img src={edit} alt="Edit" />
-          </a>
+          </Link>
 
           <button type="button">
             <img src={trash} alt="Trash" />
@@ -90,9 +90,9 @@ export default function Home() {
         </div>
 
         <div className="actions">
-          <a href="#">
+          <Link to="/edit/12">
             <img src={edit} alt="Edit" />
-          </a>
+          </Link>
 
           <button type="button">
             <img src={trash} alt="Trash" />
