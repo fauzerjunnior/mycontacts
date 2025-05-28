@@ -55,50 +55,6 @@ export default function Home() {
           </button>
         </div>
       </Card>
-
-      <Card>
-        <div className="info">
-          <div className="contact-name">
-            <strong>Fauzer Junior</strong>
-            <small>Instagram</small>
-          </div>
-
-          <span>fauzer@gmail.com</span>
-          <span>(19) 98904-6079</span>
-        </div>
-
-        <div className="actions">
-          <Link to="/edit/12">
-            <img src={edit} alt="Edit" />
-          </Link>
-
-          <button type="button">
-            <img src={trash} alt="Trash" />
-          </button>
-        </div>
-      </Card>
-
-      <Card>
-        <div className="info">
-          <div className="contact-name">
-            <strong>Fauzer Junior</strong>
-            <small>Instagram</small>
-          </div>
-
-          <span>fauzer@gmail.com</span>
-          <span>(19) 98904-6079</span>
-        </div>
-
-        <div className="actions">
-          <Link to="/edit/12">
-            <img src={edit} alt="Edit" />
-          </Link>
-
-          <button type="button">
-            <img src={trash} alt="Trash" />
-          </button>
-        </div>
-      </Card>
     </Container>
   );
 }
