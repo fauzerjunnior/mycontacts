@@ -57,7 +57,7 @@ export default function Home() {
         </div>
       </Card>
 
-      <Modal />
+      <Modal danger />
     </Container>
   );
 }
