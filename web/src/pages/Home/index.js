@@ -12,6 +12,7 @@ import arrow from '../../assets/images/icons/arrow.svg';
 import trash from '../../assets/images/icons/trash.svg';
 import edit from '../../assets/images/icons/edit.svg';
 import { Modal } from '../../components/Modal';
+import Loader from '../../components/Loader';
 
 export default function Home() {
   return (
@@ -57,7 +58,8 @@ export default function Home() {
         </div>
       </Card>
 
-      <Modal danger />
+      {/* <Modal danger /> */}
+      <Loader />
     </Container>
   );
 }
