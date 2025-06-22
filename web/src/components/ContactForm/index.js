@@ -8,6 +8,7 @@ import Select from '../Select';
 import Button from '../Button';
 
 import { isValidEmail } from '../../utils/isValidEmail';
+import { formatPhone } from '../../utils/formatPhone';
 import useErrors from '../../hooks/useErrors';
 
 export default function ContactForm({ buttonLabel }) {
@@ -16,7 +17,10 @@ export default function ContactForm({ buttonLabel }) {
   const [phone, setPhone] = useState('');
   const [category, setCategory] = useState('');
 
-  const { setError, removeError, getErrorMessageByFieldName } = useErrors();
+  const { errors, setError, removeError, getErrorMessageByFieldName } =
+    useErrors();
+
+  const isFromValid = name && errors.length === 0;
 
   function handleNameChange(e) {
     setName(e.target.value);
@@ -39,7 +43,7 @@ export default function ContactForm({ buttonLabel }) {
   }
 
   function handlePhoneChange(e) {
-    setPhone(e.target.value);
+    setPhone(formatPhone(e.target.value));
   }
 
   function handleCategoryChange(e) {
@@ -51,10 +55,10 @@ export default function ContactForm({ buttonLabel }) {
   }
 
   return (
-    <Form onSubmit={(e) => handleSubmit(e)}>
+    <Form onSubmit={(e) => handleSubmit(e)} noValidate>
       <FormGroup error={getErrorMessageByFieldName('name')}>
         <Input
-          placeholder="Nome"
+          placeholder="Nome *"
           value={name}
           onChange={handleNameChange}
           error={getErrorMessageByFieldName('name')}
@@ -63,6 +67,7 @@ export default function ContactForm({ buttonLabel }) {
 
       <FormGroup error={getErrorMessageByFieldName('email')}>
         <Input
+          type="email"
           placeholder="E-mail"
           value={email}
           onChange={handleEmailChange}
@@ -72,6 +77,7 @@ export default function ContactForm({ buttonLabel }) {
 
       <FormGroup>
         <Input
+          maxLength="15"
           placeholder="Telefone"
           value={phone}
           onChange={handlePhoneChange}
@@ -87,7 +93,9 @@ export default function ContactForm({ buttonLabel }) {
       </FormGroup>
 
       <ButtonContainer>
-        <Button type="submit">{buttonLabel}</Button>
+        <Button type="submit" disabled={!isFromValid}>
+          {buttonLabel}
+        </Button>
       </ButtonContainer>
     </Form>
   );
