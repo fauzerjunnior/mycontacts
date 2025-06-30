@@ -41,7 +41,7 @@ class ContactController {
       category_id,
     });
 
-    response.send(contact);
+    response.status(200).json(contact);
   }
 
   async update(request, response) {
@@ -50,7 +50,7 @@ class ContactController {
 
     const contactExists = ContactsRepository.findById(id);
     if (!contactExists) {
-      return response.status(404).json({ error: 'User not found' });
+      return response.status(404).json({ error: 'Contact not found' });
     }
 
     if (!name) {
@@ -71,14 +71,14 @@ class ContactController {
       category_id,
     });
 
-    response.json(contact);
+    response.status(201).json(contact);
   }
 
   async delete(request, response) {
     const { id } = request.params;
 
     await ContactsRepository.delete(id);
-    response.status(204).send();
+    response.status(204);
   }
 }
 
